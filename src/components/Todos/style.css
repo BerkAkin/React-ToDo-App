@@ -1,0 +1,15 @@
+.panel {
+    display: flex;
+    justify-content: center;
+    min-height: 100wh;
+    align-items: center;
+}
+
+.container{
+    background-color: brown;
+    margin: 25%;
+}
+
+.madde{
+    list-style: none;
+}
