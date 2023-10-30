@@ -4,9 +4,9 @@ function List({todos, setTodos, filter}) {
 
     const filteredTodos =
     filter === "active"
-      ? todos.filter((todo) => !todo.status)
+      ? todos.filter((todo) => todo.status === false)
       : filter === "completed"
-      ? todos.filter((todo) => todo.status)
+      ? todos.filter((todo) => todo.status === true)
       : todos;
 
 
