@@ -11,11 +11,15 @@ const onEnter = (e)=>{
   }
 }
 
+const onSubmitForm = (e) => {
+  e.preventDefault();
+}
+
   return (
     <div>
          <header className="header">
                 <h1>Todos</h1>
-                <form>
+                <form onSubmit={onSubmitForm}>
                     <input onKeyDown={onEnter} onChange={handleChange} value={todoText.text} className="new-todo" placeholder="What needs to be done?" />
                 </form>
             </header>
