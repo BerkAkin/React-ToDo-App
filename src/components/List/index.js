@@ -96,7 +96,7 @@ function List({todos, setTodos, filter, setError}) {
             filteredTodos.map((todo) => {
                 return (
                     <li key={todo.id} className={todo.status ? "completed" : ""}>
-                        <div className="view">
+                        <div style={{fontFamily:'system-ui', fontWeight:400}} className="view">
                             <input onChange={()=>onCheck(todo.id)} checked={todo.status} className="toggle" type="checkbox" />
                             {
                             todo.editable 

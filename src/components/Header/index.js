@@ -1,8 +1,13 @@
 import React from 'react'
+import imag from '../../images/whatto.png'
+
+
+
+
+
 
 
 function Header({todoText, setTodoText, todos, setTodos, error, setError}) {
-
 
 
 const handleChange = (e) =>{
@@ -30,7 +35,7 @@ const onSubmitForm = (e) => {
   return (
     <div>
          <header className="header">
-                <h1>Yapılacaklar</h1>
+                <h1 style={{fontFamily:'system-ui'}}>What To Do</h1>
                 
                 <small style={{color:'red',display:'flex',justifyContent:'center',fontWeight:600}}>{error}</small>
                 <form onSubmit={onSubmitForm}>
