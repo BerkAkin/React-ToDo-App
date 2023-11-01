@@ -69,6 +69,11 @@ function List({todos, setTodos, filter}) {
             } 
             setTodos([...todos])
         }
+        if(e.key ==='Escape'){
+            obje.editable = !obje.editable;
+            setTodos([...todos])
+            console.log("edit kapandı")
+        }
         
     
     }
@@ -85,7 +90,7 @@ function List({todos, setTodos, filter}) {
                             {
                             todo.editable 
                             ? 
-                            <input onKeyUp={(e)=>handleChange(e,todo.id)} onChange={onEditChange} value={editText}/> 
+                            <input on onKeyUp={(e)=>handleChange(e,todo.id)} onChange={onEditChange} value={editText} autoFocus/> 
                             : 
                             <label onClick={()=>onLabelClick(todo.id)}>{todo.text}</label>
                             }
