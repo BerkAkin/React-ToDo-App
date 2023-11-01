@@ -12,7 +12,8 @@ function Index() {
     const [todoText,setTodoText] = useState({
         'text':'',
         'id':Math.random(),
-        'status':false
+        'status':false,
+        'editable':false
       })
 
     const [todos,setTodos] = useState([])
