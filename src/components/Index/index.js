@@ -1,5 +1,4 @@
 import React from 'react'
-import Footer from '../Footer'
 import Header from '../Header'
 import List from '../List'
 import Filter from '../Filter'
@@ -41,7 +40,6 @@ function Index() {
             </section>
             <Filter setTodos={setTodos} todos={todos} filter={filter} setFilter={setFilter}/>
         </section>
-        <Footer/>
     </div>
   )
 }

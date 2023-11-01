@@ -18,7 +18,7 @@ const onSubmitForm = (e) => {
   return (
     <div>
          <header className="header">
-                <h1>Todos</h1>
+                <h1>Yapılacaklar</h1>
                 <form onSubmit={onSubmitForm}>
                     <input onKeyDown={onEnter} onChange={handleChange} value={todoText.text} className="new-todo" placeholder="What needs to be done?" />
                 </form>

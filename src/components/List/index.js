@@ -1,5 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react';
 import { useState } from 'react';
 function List({todos, setTodos, filter}) {
 
@@ -90,7 +89,7 @@ function List({todos, setTodos, filter}) {
                             {
                             todo.editable 
                             ? 
-                            <input onKeyUp={(e)=>handleChange(e,todo.id)} onChange={onEditChange} value={editText} autoFocus/> 
+                            <input onKeyUp={(e)=>handleChange(e,todo.id)} onChange={onEditChange} value={editText} autoFocus spellCheck="false"/> 
                             : 
                             <label onClick={()=>onLabelClick(todo.id)}>{todo.text}</label>
                             }
