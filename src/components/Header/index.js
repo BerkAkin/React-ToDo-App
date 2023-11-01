@@ -20,7 +20,7 @@ const onSubmitForm = (e) => {
          <header className="header">
                 <h1>Yapılacaklar</h1>
                 <form onSubmit={onSubmitForm}>
-                    <input onKeyDown={onEnter} onChange={handleChange} value={todoText.text} className="new-todo" placeholder="What needs to be done?" />
+                    <input onKeyDown={onEnter} onChange={handleChange} value={todoText.text} className="new-todo" placeholder="Ne yapıyorsun?" />
                 </form>
             </header>
     </div>

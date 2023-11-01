@@ -17,23 +17,23 @@ function Filter({filter, setFilter, todos, setTodos }) {
             <footer className="footer">
                 <span className="todo-count">
                     <strong>{count} </strong>
-                    items left
+                    İş Kaldı
                 </span>
 
                 <ul className="filters">
                     <li>
-                        <a onClick={() => setFilter('all')} className={filter === 'all' ? 'selected' : ''}>All</a>
+                        <a onClick={() => setFilter('all')} className={filter === 'all' ? 'selected' : ''}>Tümü</a>
                     </li>
                     <li>
-                        <a onClick={() => setFilter('active')} className={filter === 'active' ? 'selected' : ''}>Active</a> 
+                        <a onClick={() => setFilter('active')} className={filter === 'active' ? 'selected' : ''}>Aktif</a> 
                     </li>
                     <li>
-                        <a onClick={() => setFilter('completed')} className={filter === 'completed' ? 'selected' : ''}>Completed</a>
+                        <a onClick={() => setFilter('completed')} className={filter === 'completed' ? 'selected' : ''}>Tamamlananlar</a>
                     </li>
                 </ul>
 
                 <button onClick={handleClearAll} className="clear-completed">
-                    Clear completed
+                    Temizle
                 </button>
             </footer>
     </>
