@@ -3,10 +3,12 @@ import Header from '../Header'
 import List from '../List'
 import Filter from '../Filter'
 import { useState } from 'react'
+import { PropTypes } from 'prop-types'
 import '../style.css'
 
 
 function Index() {
+
 
     const [todoText,setTodoText] = useState({
         'text':'',
@@ -15,7 +17,12 @@ function Index() {
         'editable':false
       })
 
-    const [todos,setTodos] = useState([])
+      //state e fonksiyon verip varsa todoyu initial state olarak yoksa boş dizi aç şeklinde tanımlıyoruz
+    const [todos,setTodos] = useState(() => {
+        return JSON.parse(localStorage.getItem("todos")) || [] 
+      })
+
+
     const [filter,setFilter] = useState('all')
 
     const setAllCompleted = () =>{
@@ -25,12 +32,14 @@ function Index() {
             )
         )
     }
+
+    const [error,setError] = useState('')
       
 
   return (
     <div>
         <section className="todoapp">
-           <Header todoText={todoText} setTodoText={setTodoText} todos={todos} setTodos={setTodos}/>
+           <Header error={error} setError={setError} todoText={todoText} setTodoText={setTodoText} todos={todos} setTodos={setTodos}/>
             <section className="main">
                 <input className="toggle-all" type="checkbox" />
                 <label onClick={setAllCompleted} htmlFor="toggle-all"> Mark all as complete</label>
@@ -43,5 +52,34 @@ function Index() {
     </div>
   )
 }
+
+
+
+
+Header.propTypes = {
+    todoText: PropTypes.object.isRequired,
+    setTodoText: PropTypes.func.isRequired,
+    todos: PropTypes.array.isRequired,
+    setTodos: PropTypes.func.isRequired,
+    error: PropTypes.string.isRequired,
+    setError: PropTypes.func.isRequired,
+}
+
+List.propTypes = {
+    filter: PropTypes.string.isRequired,
+    setFilter: PropTypes.func.isRequired,
+    todos: PropTypes.array.isRequired,
+    setTodos: PropTypes.func.isRequired,
+}
+
+Filter.propTypes = {
+    filter: PropTypes.string.isRequired,
+    setFilter: PropTypes.func.isRequired,
+    todos: PropTypes.array.isRequired,
+    setTodos: PropTypes.func.isRequired,
+}
+
+
+
 
 export default Index

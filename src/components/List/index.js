@@ -1,10 +1,16 @@
 import React from 'react'
 import { useState } from 'react';
+import { useEffect } from 'react';
 function List({todos, setTodos, filter}) {
 
 
-  
+    //todosta herhangi bir değişim olduğunda localstoarge güncellensin diye
 
+    useEffect(() => {
+        localStorage.setItem("todos", JSON.stringify(todos))
+    }, [todos])
+
+  
     const filteredTodos =
     filter === "active"
       ? todos.filter((todo) => todo.status === false)
