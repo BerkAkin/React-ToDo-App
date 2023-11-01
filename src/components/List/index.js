@@ -90,7 +90,7 @@ function List({todos, setTodos, filter}) {
                             {
                             todo.editable 
                             ? 
-                            <input on onKeyUp={(e)=>handleChange(e,todo.id)} onChange={onEditChange} value={editText} autoFocus/> 
+                            <input onKeyUp={(e)=>handleChange(e,todo.id)} onChange={onEditChange} value={editText} autoFocus/> 
                             : 
                             <label onClick={()=>onLabelClick(todo.id)}>{todo.text}</label>
                             }
