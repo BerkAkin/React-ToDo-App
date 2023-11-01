@@ -35,7 +35,7 @@ const onSubmitForm = (e) => {
   return (
     <div>
          <header className="header">
-                <h1 style={{fontFamily:'system-ui'}}>What To Do</h1>
+                <h1 style={{fontFamily:'system-ui'}}>To Dö?</h1>
                 
                 <small style={{color:'red',display:'flex',justifyContent:'center',fontWeight:600}}>{error}</small>
                 <form onSubmit={onSubmitForm}>
