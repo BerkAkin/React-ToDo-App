@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
-function List({todos, setTodos, filter}) {
+function List({todos, setTodos, filter, setError}) {
 
 
     //todosta herhangi bir değişim olduğunda localstoarge güncellensin diye
@@ -47,6 +47,9 @@ function List({todos, setTodos, filter}) {
                 }
             })
         }
+        else{
+            setError('Lütfen önceki düzenlemeyi kaydet!');
+        }
         setTodos([...todos])
     }
 
@@ -66,6 +69,10 @@ function List({todos, setTodos, filter}) {
     const handleChange = (e , id) => {
         const obje = todos.find(todo=>todo.id === id)
         if(e.key === 'Enter'){
+            if(e.target.value===""){
+                setError('Düzenleme boş bırakılamaz!');
+                return
+              }
             obje.text = editText
             obje.editable = !obje.editable;
             setEditText('')
@@ -77,7 +84,6 @@ function List({todos, setTodos, filter}) {
         if(e.key ==='Escape'){
             obje.editable = !obje.editable;
             setTodos([...todos])
-            console.log("edit kapandı")
         }
         
     
@@ -95,7 +101,7 @@ function List({todos, setTodos, filter}) {
                             {
                             todo.editable 
                             ? 
-                            <input onKeyUp={(e)=>handleChange(e,todo.id)} onChange={onEditChange} value={editText} autoFocus spellCheck="false"/> 
+                            <input onKeyUp={(e)=>handleChange(e,todo.id)} onChange={onEditChange} value={editText} autoFocus spellCheck="false" placeholder='Düzenleniyor...'/> 
                             : 
                             <label onClick={()=>onLabelClick(todo.id)}>{todo.text}</label>
                             }

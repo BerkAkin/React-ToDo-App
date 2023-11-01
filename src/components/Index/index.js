@@ -44,7 +44,7 @@ function Index() {
                 <input className="toggle-all" type="checkbox" />
                 <label onClick={setAllCompleted} htmlFor="toggle-all"> Mark all as complete</label>
                 <ul  className="todo-list">
-                    <List todos={todos} setTodos={setTodos} filter={filter} setFilter={setFilter}/>
+                    <List todos={todos} setTodos={setTodos} filter={filter} setFilter={setFilter} setError={setError}/>
                 </ul>
             </section>
             <Filter setTodos={setTodos} todos={todos} filter={filter} setFilter={setFilter}/>
